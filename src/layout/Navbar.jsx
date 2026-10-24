@@ -1,4 +1,4 @@
-import {  useState } from "react";
+import {  useEffect, useState } from "react";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -34,22 +34,22 @@ export default function Navbar() {
       </>
     );
   };
-  document.getElementById("teams")
-document.getElementById("services")
-  // useEffect(() => {
-  //   document.body.style.overflow = menu ? "hidden" : "auto";
+//   document.getElementById("teams")
+// document.getElementById("services")
+  useEffect(() => {
+    document.body.style.overflow = menu ? "hidden" : "auto";
 
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //   };
-  // }, [menu]);
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menu]);
   return (
     <header className="fixed top-0 w-full transition-all duration-400 flex flex-col bg-transparent z-13">
       <div className="bg-purple-500 pt-2.75 pb-2.5 tracking-normal text-center flex justify-center items-center text-sm text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
       </div>
       <div className="bg-white relative z-20 shadow-md">
-        <div className="h-22 container mx-auto py-5 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className=" container mx-auto py-6.5 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="flex items-center justify-between">
             <div className="flex justify-center">
               {/* <img src="" alt="" /> */}
