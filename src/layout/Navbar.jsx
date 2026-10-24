@@ -49,7 +49,7 @@ export default function Navbar() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit
       </div>
       <div className="bg-white relative z-20 shadow-md">
-        <div className=" container mx-auto py-6.5 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="container mx-auto py-6.5 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="flex items-center justify-between">
             <div className="flex justify-center">
               {/* <img src="" alt="" /> */}
