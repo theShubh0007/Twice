@@ -101,7 +101,9 @@ export default function NewsSection() {
   return (
     <>
       <div  className="slider-container news-slider mt-14 ">
-        <Slider ref={sliderRef} {...sliderSettings}>
+        <Slider ref={sliderRef} {...sliderSettings}
+         key={window.innerWidth <= 600 ? 1 : window.innerWidth <= 1024 ? 2 : 3}
+        >
           {newsData.map((news) => (
             <NewsCard news={news} />
           ))}
