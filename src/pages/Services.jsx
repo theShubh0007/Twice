@@ -1,8 +1,21 @@
+import { useState } from "react";
+import Modal from "../components/Modal";
 import SectionHeading from "../components/SectionHeading";
-import ServiceCard from "../components/ServiceCard";
 import { services } from "../data/data";
 
 export default function Services() {
+  function ServiceCard ({service, onClick}){
+    return(
+      <div onClick={onClick} className="aspect-square flex flex-col items-center justify-center bg-white">
+        <img src={service.icon} alt="" className="w-1/3 object-contain" />
+        <h3 className="font-semibold text-center text-2xl lg:text-3xl mt-6">
+          {service.title}
+        </h3>
+      </div>
+      )
+    }
+  const [selectedService, setSelectedService] = useState(null);
+  // const [open, setOpen] = useState(false);
   return (
     <section id="services" className="relative bg-[#f4f4f4]  pb-16">
       <div className=" absolute inset-x-0 top-0 bg-purple-500 h-112.5" />
@@ -24,11 +37,16 @@ export default function Services() {
           {/* <div className="container mx-auto relative px-4    -mt-14"> */}
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
+              <ServiceCard key={service.title} service={service}  onClick={() => { setSelectedService(service); }}/>
             ))}
           </div>
         </div>
       </div> 
+      <Modal
+        open={selectedService !== null}
+        setOpen={(value) => !value && setSelectedService(null)}
+        service={selectedService}
+      />
     </section>
   );
 }

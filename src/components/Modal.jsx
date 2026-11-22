@@ -28,7 +28,7 @@ export default function Modal({ open, setOpen, member, service }) {
   );
 
   return (
-    <div className="w-full  fixed inset-0 bg-zinc-100/80 flex items-center justify-center z-50">
+    <div className="w-full fixed inset-0 bg-zinc-100/80 flex items-center justify-center z-50" >
       <div
         className="bg-white px-11.5 rounded-2xl w-full max-w-3xl"
         onClick={(e) => e.stopPropagation()}
@@ -58,24 +58,31 @@ export default function Modal({ open, setOpen, member, service }) {
         )}
 
         {service && (
-          <div>
-            <div className="flex items-center justify-center">
-              <img
-                src={service.icon}
-                alt={service.title}
-                className="h-15 w-15 sm:h-18 sm:w-18 md:h-22 md:w-22 lg:h-25 lg:w-25"
-              />
-            </div>
-            <h4 className="mt-4 sm:text-xl  lg:text-2xl text-center mb-2">
-              {service.title}
-            </h4>
-            <div className="flex justify-center  text-center items-center">
-              <Bar />
-            </div>
+          <div className=" my-14">
+            <div className="flex flex-col items-center ">
+        <img
+          src={service.icon}
+          alt={service.title}
+          className="h-20 w-20 sm:h-16 sm:w-16 object-contain"
+        />
+
+        <h4 className="mt-3.5 text-xl sm:text-2xl font-semibold text-center">
+          {service.title}
+        </h4>
+
+        <div className="mt-4 mb-6">
+          <Bar />
+        </div>
+
+          <div className="w-full max-w-2xl">
             {text()}
           </div>
-        )}
+        </div> 
       </div>
+        )}
     </div>
-  );
+    </div>
+
+  )
 }
+

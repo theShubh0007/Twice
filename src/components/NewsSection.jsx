@@ -52,7 +52,7 @@ function NewsCard({ news }) {
             <p className="text-sm">{news.category}</p>
             <p className="text-sm">{news.date}</p>
           </div>
-          <p className="text-md leading-4 font-medium  mt-4 line-clamp-2 w-[70%] pb-6">
+          <p className="text-md leading-4 font-medium  mt-4 line-clamp-2 md-w-[80%] lg-w-[70%] pb-6">
             {news.title}
           </p>
         </div>
